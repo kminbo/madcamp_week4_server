@@ -33,6 +33,8 @@ export class ScheduleService {
             schedule_id: uuidv4(),
             ...createScheduleDto,
         });
-        return await createdSchedule.save();
+        await createdSchedule.save();
+
+        return {status: 'success', message: 'Schedule created successfully'};
     }
 }
