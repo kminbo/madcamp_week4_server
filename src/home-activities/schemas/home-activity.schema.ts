@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 @Schema()
 export class HomeActivities {
     @Prop({default: uuidv4(), unique: true})  //UUID 생성
-    acitivity_id: string;
+    activity_id: string;
 
     @Prop({ ref: 'User', required: true})
     user_id: string;
