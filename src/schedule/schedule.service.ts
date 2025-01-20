@@ -37,4 +37,18 @@ export class ScheduleService {
 
         return {status: 'success', message: 'Schedule created successfully'};
     }
+
+    async getSituations(userId: string) {
+        this.logger.log('getSchedule 함수 호출');
+        this.logger.log(`user_id: ${userId}`);
+
+        const schedules = await this.scheduleModel.find({user_id: userId}, 'situation');
+        if (!schedules || schedules.length === 0) {
+            throw new NotFoundException(`No situations found for user_id: ${userId}`);
+        }
+
+        const situations = schedules.map(schedule => schedule.situation);
+
+        return {status: 'success', situations};
+    }
 }

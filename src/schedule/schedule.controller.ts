@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get, Query } from '@nestjs/common';
 import { ScheduleService } from './schedule.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 
@@ -9,5 +9,10 @@ export class ScheduleController {
   @Post()
   async createSchedule(@Body() createScheduleDto: CreateScheduleDto) {
     return await this.scheduleService.createSchedule(createScheduleDto);
+  }
+
+  @Get('situations')
+  async getSituations(@Query('user_id') userId: string) {
+    return await this.scheduleService.getSituations(userId);
   }
 }
