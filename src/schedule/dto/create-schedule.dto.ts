@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsDateString } from 'class-validator';
+import { IsNotEmpty, IsString, IsDate } from 'class-validator';
 
 export class CreateScheduleDto {
     @IsNotEmpty()
@@ -10,8 +10,8 @@ export class CreateScheduleDto {
     situation: string;
 
     @IsNotEmpty()
-    @IsDateString()
-    due: string;
+    @IsDate()
+    due: Date;
 
     @IsString()
     tasks?: string;

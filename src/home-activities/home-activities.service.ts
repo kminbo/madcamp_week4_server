@@ -38,4 +38,17 @@ export class HomeActivitiesService {
 
         return {status: 'success', message: 'Home activity created successfully'};
     }
+
+    async getHomeActivities(userId: string) {
+        this.logger.log('getHomeActivities 함수 호출');
+        this.logger.log(`user_id: ${userId}`);
+
+        const homeActivities = await this.homeActivitiesModel.find({user_id: userId}).exec();
+
+        if(!homeActivities || homeActivities.length === 0) {
+            throw new NotFoundException(`No home activities found for user_id: ${userId}`);
+        }
+
+        return {status: 'success', activities: homeActivities.map(a => a.activity)};
+    }
 }

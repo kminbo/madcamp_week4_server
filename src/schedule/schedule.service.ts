@@ -38,6 +38,18 @@ export class ScheduleService {
         return {status: 'success', message: 'Schedule created successfully'};
     }
 
+    async getSchedules(userId: string) {
+        this.logger.log('getSchedule 함수 호출');
+        this.logger.log(`user_id: ${userId}`);
+
+        const schedules = await this.scheduleModel.find({user_id: userId}).exec();
+        if (!schedules || schedules.length === 0) {
+            throw new NotFoundException(`No schedules found for user_id: ${userId}`);
+        }
+
+        return {status: 'success', schedules};
+    }
+
     async getSituations(userId: string) {
         this.logger.log('getSchedule 함수 호출');
         this.logger.log(`user_id: ${userId}`);

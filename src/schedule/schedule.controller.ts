@@ -11,6 +11,11 @@ export class ScheduleController {
     return await this.scheduleService.createSchedule(createScheduleDto);
   }
 
+  @Get()
+  async getSchedules(@Query('user_id') userId: string) {
+    return await this.scheduleService.getSchedules(userId);
+  }
+
   @Get('situations')
   async getSituations(@Query('user_id') userId: string) {
     return await this.scheduleService.getSituations(userId);
