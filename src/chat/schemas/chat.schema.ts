@@ -6,10 +6,13 @@ export class Chat{
     room_id: string;
 
     @Prop({required: true})
+    sender_id: string;  //user_id
+
+    @Prop({required: true})
     message: string;
 
     @Prop({default: Date.now})
-    createdAt: Date;
+    created_at: Date;
 }
 
 export const ChatSchema = SchemaFactory.createForClass(Chat);

@@ -35,7 +35,7 @@ export class ScheduleService {
         });
         await createdSchedule.save();
 
-        return {status: 'success', message: 'Schedule created successfully'};
+        return {status: 'success', message: 'Schedule created successfully', schedule: createdSchedule};
     }
 
     async getSchedules(userId: string) {
@@ -60,7 +60,20 @@ export class ScheduleService {
         }
 
         const situations = schedules.map(schedule => schedule.situation);
+        this.logger.log(`situations: ${schedules}`);
 
         return {status: 'success', situations};
+    }
+
+    async getScheduleDetail(scheduleId: string) {
+        this.logger.log('getScheduleDetail 함수 호출');
+        this.logger.log(`schedule_id: ${scheduleId}`);
+
+        const schedule = await this.scheduleModel.findOne({schedule_id: scheduleId}).exec();
+        if (!schedule) {
+            throw new NotFoundException(`No schedule found for schedule_id: ${scheduleId}`);
+        }
+
+        return {status: 'success', schedule};
     }
 }

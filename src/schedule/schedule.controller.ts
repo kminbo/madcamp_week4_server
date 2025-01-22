@@ -16,8 +16,15 @@ export class ScheduleController {
     return await this.scheduleService.getSchedules(userId);
   }
 
+  @Get('detail')
+  async getScheduleDetail(@Query('schedule_id') scheduleId: string) {
+    return await this.scheduleService.getScheduleDetail(scheduleId);
+  }
+  
   @Get('situations')
   async getSituations(@Query('user_id') userId: string) {
     return await this.scheduleService.getSituations(userId);
   }
+
+
 }
