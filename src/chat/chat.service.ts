@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { Chat } from "./schemas/chat.schema";
@@ -38,5 +38,19 @@ export class ChatService {
     async checkRoomExists(room_id: string){
         const room = await this.roomModel.findOne({room_id});
         return !!room;
+    }
+
+    async getLatestMessages(room_id: string){
+        const recentMessage = await this.chatModel
+            .findOne({room_id})
+            .sort({created_at: -1})
+            .select('message -_id')
+            .exec();
+
+        if(!recentMessage){
+            throw new NotFoundException(`No recent message found for room_id: ${room_id}`);
+        }
+
+        return recentMessage;
     }
 }

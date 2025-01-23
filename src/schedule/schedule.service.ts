@@ -76,4 +76,16 @@ export class ScheduleService {
 
         return {status: 'success', schedule};
     }
+
+    async deleteSchedule(scheduleId: string) {
+        this.logger.log(`deleteSchedule 함수 호출`);
+        this.logger.log(`schedule_id: ${scheduleId}`);
+
+        const result = await this.scheduleModel.deleteOne({schedule_id: scheduleId}).exec();
+        if (result.deletedCount === 0) {
+            throw new NotFoundException(`No schedule found for schedule_id: ${scheduleId}`);
+        }
+        this.logger.log(`schedule deleted successfully: ${scheduleId}`);
+        return {status: 'success', message: 'Schedule deleted successfully'};
+    }
 }

@@ -42,4 +42,15 @@ export class ChatController {
             })),
         };
     }
+
+    @Get('recents')
+    async getLatestMessages(@Query('room_id') room_id: string){
+        if (!room_id){
+            return {status: 'error', message: 'Room ID is required'};
+        }
+        const latestMessages = await this.chatService.getLatestMessages(room_id);
+        return {status: 'success', message: latestMessages.message};
+    }
+
+
 }

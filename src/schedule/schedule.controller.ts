@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Query } from '@nestjs/common';
+import { Controller, Post, Body, Get, Query, Delete } from '@nestjs/common';
 import { ScheduleService } from './schedule.service';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
 
@@ -26,5 +26,13 @@ export class ScheduleController {
     return await this.scheduleService.getSituations(userId);
   }
 
+  @Delete()
+  async deleteSchedule(@Query('schedule_id') scheduleId: string) {
+    if (!scheduleId) {
+      return {status: 'error', message: 'Schedule ID is required'};
+    }
+    await this.scheduleService.deleteSchedule(scheduleId);
+    return {status: 'success', message: 'Schedule deleted successfully'};
+  }
 
 }

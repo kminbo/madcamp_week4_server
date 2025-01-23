@@ -79,7 +79,7 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
         this.logger.log(`Broadcasting message to room ${payload.room_id}: ${payload.message}`);
 
         //broadcast the message to all connected clients in the room
-        this.server.to(payload.room_id).emit('message', {
+        client.to(payload.room_id).emit('message', {
             room_id: payload.room_id, 
             sender_id: senderId, 
             message: payload.message, 

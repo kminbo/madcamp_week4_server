@@ -30,11 +30,13 @@ export class HomeActivitiesService {
         this.logger.log(`user: ${user}`);
 
         const createdHomeActivity = new this.homeActivitiesModel({
-            acitivity_id: uuidv4(),
+            activity_id: uuidv4(),
             user_id, 
             activity});
 
         const savedHomeActivity = await createdHomeActivity.save();
+
+        this.logger.log(`savedHomeActivity: ${savedHomeActivity}`);
 
         return {status: 'success', message: 'Home activity created successfully'};
     }
@@ -49,6 +51,18 @@ export class HomeActivitiesService {
             throw new NotFoundException(`No home activities found for user_id: ${userId}`);
         }
 
-        return {status: 'success', activities: homeActivities.map(a => a.activity)};
+        return {status: 'success', activities: homeActivities.map(a => ({
+            activity_id: a.activity_id,
+            activity: a.activity
+        }))};
+    }
+
+    async deleteHomeActivity(activityId: string) {
+        const result = await this.homeActivitiesModel.deleteOne({activity_id: activityId}).exec();
+        if (result.deletedCount === 0) {
+            throw new NotFoundException(`No home activity found for activity_id: ${activityId}`);
+        }
+        this.logger.log(`home activity deleted successfully: ${activityId}`);
+        return {status: 'success', message: 'Home activity deleted successfully'};
     }
 }
