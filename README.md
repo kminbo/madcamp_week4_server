@@ -1,99 +1,71 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+## Outline
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+---
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+**직장인들, 학생들**, 그리고 **집에 가고 싶어하는 모든 사람들**이 들어와서 지루함을 해소하고 집에 가고 싶은 마음을 조금이라도 덜어주는 *가짜 웹사이트*입니다. 여러분의 집에 가고 싶은 마음을 저장하고, 다른 사람들과 공감하며, "집에 가서 뭐하지?" 같은 계획까지 세울 수 있습니다. 
 
-## Description
+## Team & Tech Stack
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+<aside>
+<img src="/icons/computer_blue.svg" alt="/icons/computer_blue.svg" width="40px" />
 
-```bash
-$ npm install
-```
+**FE**: 이재환
 
-## Compile and run the project
+- React
+</aside>
 
-```bash
-# development
-$ npm run start
+<aside>
+<img src="/icons/server_blue.svg" alt="/icons/server_blue.svg" width="40px" />
 
-# watch mode
-$ npm run start:dev
+**BE**: 김보민
 
-# production mode
-$ npm run start:prod
-```
+- Node.js
+</aside>
 
-## Run tests
+<aside>
+<img src="/icons/gear_blue.svg" alt="/icons/gear_blue.svg" width="40px" />
 
-```bash
-# unit tests
-$ npm run test
+- DB: MongoDB Atlas
+- Server: AWS
+- Collaboration: Github
+</aside>
 
-# e2e tests
-$ npm run test:e2e
+## Details
 
-# test coverage
-$ npm run test:cov
-```
+---
 
-## Deployment
+### 로그인 -> 메인화면
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+여러분의 개인 데스크탑처럼 꾸며진 window10.5의 메인 화면입니다.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/009a0033-e232-4071-aa10-81c479bef831/image.png)
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/c998ecac-48f7-4797-87ea-570621d70607/image.png)
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/2578ef5f-cfa6-406f-b87c-5213d092cd48/image.png)
 
-## Resources
+![main_page.jpeg](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/54f4812b-2a3c-4ee9-b713-27a1c639c674/main_page.jpeg)
 
-Check out a few resources that may come in handy when working with NestJS:
+### 내 PC: 집에 언제 가지
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+내가 언제 집에 갈지 계획하고, 저장해두고, 마음껏 하소연할 수 있어요. 퇴근 시간, 학교 끝나는 시간, 약속 취소를 기다리는 시간 등, 집에 가고 싶은 모든 순간을 기록하며 마음의 위안을 얻을 수 있는 공간입니다.
 
-## Support
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/9d951c03-d231-438e-99a0-33c589599938/image.png)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/2e318dcf-8713-478d-9d66-cb384bf645e9/image.png)
 
-## Stay in touch
+### 파일탐색기: 집에 가고 싶었던 상황 모음
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/23d6a296-b09f-4538-9a38-68e6e67560ae/image.png)
 
-## License
+언제, 왜 그렇게 집에 가고 싶었는지 정리해놓는 감정 아카이브입니다. "야근 때문에", "오늘 점심 최악이었음", "회의 중 멍때리다" 등, 다양한 집 가고 싶은 순간들을 저장하고, 나중에 보며 "아, 내가 이랬지"라고 웃을 수도 있습니다.
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### Chrome: 채팅방
+
+집에 가고 싶은 사람들끼리 실시간 채팅을 할 수 있는 공간입니다. "지금 사무실인데 집 생각나요 ㅠㅠ"를 외치면 누군가가 "저도요...!"로 화답해주는 공감의 장! 서로의 "집 가고 싶음"을 나누며 위로를 받는 따뜻한 공간입니다. 
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/23ec9070-6d8c-40da-97be-8ab234dcd7c8/image.png)
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6cb388f-3934-47d6-9928-26d2e10eb0fc/5f4361d0-14c0-4c30-b114-5c741ed25c5e/image.png)
